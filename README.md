@@ -16,6 +16,7 @@ I take notes for two simple reasons: they enhance my understanding of concepts a
 
 - [JavaScript notes](https://its-haanna.github.io/study_notes/JS_notes/)
 - [SQL notes](https://its-haanna.github.io/study_notes/SQL_notes/)
+- [UX/UI course notes](https://its-haanna.github.io/study_notes/UX:UI_course_notes)
 
 ## Author
 
