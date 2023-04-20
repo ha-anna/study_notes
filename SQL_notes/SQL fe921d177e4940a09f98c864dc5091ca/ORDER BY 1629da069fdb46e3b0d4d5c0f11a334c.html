@@ -671,21 +671,21 @@ column_name1,
 column_name2
 FROM table_name
 ORDER BY column_name1</code></pre><ul id="3821c58c-ed0d-4090-b4b1-87bd68834fc1" class="bulleted-list"><li style="list-style-type:disc">used to order results based on a column</li></ul><ul id="2520c51a-a22b-40b0-aa01-e0a38a1dc31c" class="bulleted-list"><li style="list-style-type:disc">alphabetically, numerically, chronologically</li></ul><p id="d66358ab-ea9c-4617-a16e-4d16aba770f4" class="">
-</p><pre id="97160a37-e0de-4f68-9fc8-4d6b10973f47" class="code"><code>SELECT
+</p><div id="bc809d3f-671b-4589-bf4d-b971ed4fc926" class="column-list"><div id="fa8b6d7b-5c61-468a-bde1-7ab84cce7329" style="width:31.25%" class="column"><figure id="ae3f585a-edba-4992-acfc-9cfbc6e7db4e" class="image"><a href="ORDER%20BY%201629da069fdb46e3b0d4d5c0f11a334c/Screen_Shot_2023-04-20_at_12.44.52_PM.png"><img style="width:262px" src="ORDER%20BY%201629da069fdb46e3b0d4d5c0f11a334c/Screen_Shot_2023-04-20_at_12.44.52_PM.png"/></a></figure></div><div id="f9660a53-d6ba-475a-bef2-c17df5e0173a" style="width:68.75%" class="column"><pre id="97160a37-e0de-4f68-9fc8-4d6b10973f47" class="code"><code>SELECT
 first_name,
 last_name
 FROM actor
-ORDER BY first_name</code></pre><p id="652a95c8-bffe-4d1d-a374-6f16e98caee1" class="">
+ORDER BY first_name</code></pre></div></div><p id="652a95c8-bffe-4d1d-a374-6f16e98caee1" class="">
 </p><h2 id="8c0a2a8e-c09d-4f5d-950e-9c5e9ee63b3c" class="">Keywords</h2><pre id="6d70eb1e-3367-432a-84ed-38b33e1f1c63" class="code"><code>ORDER BY column_name1 DESC</code></pre><p id="3301c52e-aa7a-4d27-b40e-3f2327116270" class="">Descending order (Z→ A, biggest num → smallest num, olderst date → newest date)</p><p id="5c0f9b4d-f56e-46fa-92f8-aac1d21c7158" class="">
 </p><pre id="2172f7c1-50f2-461f-81ab-ce23b416520a" class="code"><code>ORDER BY column_name1 ASC</code></pre><p id="aaed0b0a-b202-4941-9798-c25b565fee6a" class="">This is a default value, ascending order (but can be specified for readability purposes)</p><p id="b84b16a3-f831-4ccb-891e-51f3873e6542" class="">
-</p><h2 id="2a416a18-9d43-4490-a979-4a8918e32a1a" class="">Multiple columns</h2><p id="380c9164-f644-47df-8e79-f36468300a6b" class="">In situation where the values of the chosen column are the same, we can add second criteria</p><pre id="44255297-74d6-4890-b78d-e4743f1f9106" class="code"><code>SELECT
+</p><h2 id="2a416a18-9d43-4490-a979-4a8918e32a1a" class="">Multiple columns</h2><p id="380c9164-f644-47df-8e79-f36468300a6b" class="">In situation where the values of the chosen column are the same, we can add second criteria</p><div id="bd59359f-0d90-43a0-8ecb-b7289b7132f7" class="column-list"><div id="f09e2802-06ea-415d-9443-c18cc4ca3a6f" style="width:25%" class="column"><figure id="eb622aea-4e54-4bee-8428-2234a5b4c95d" class="image"><a href="ORDER%20BY%201629da069fdb46e3b0d4d5c0f11a334c/Screen_Shot_2023-04-20_at_12.45.13_PM.png"><img style="width:258px" src="ORDER%20BY%201629da069fdb46e3b0d4d5c0f11a334c/Screen_Shot_2023-04-20_at_12.45.13_PM.png"/></a></figure></div><div id="7563ecf0-f593-4596-a6f7-38fc6645f2df" style="width:75%" class="column"><pre id="44255297-74d6-4890-b78d-e4743f1f9106" class="code"><code>SELECT
 first_name,
 last_name
 FROM actor
-ORDER BY first_name, last_name</code></pre><p id="4b1dba9f-34e0-487e-a22b-5f696d6d1dd2" class="">This will cause the surnames to be organized alphabetically too.</p><h2 id="9b98f76d-6eb2-4fd2-b17b-196d95d9dedc" class="">Multiple columns + keywords</h2><pre id="014f9b93-8244-4d0f-afef-bb022ea04c4e" class="code"><code>SELECT
+ORDER BY first_name, last_name</code></pre></div></div><p id="4b1dba9f-34e0-487e-a22b-5f696d6d1dd2" class="">This will cause the surnames to be organized alphabetically too.</p><h2 id="9b98f76d-6eb2-4fd2-b17b-196d95d9dedc" class="">Multiple columns + keywords</h2><div id="214c5042-4c3e-47d8-97de-d84b1e9fcb9a" class="column-list"><div id="b82dfca5-86d2-4b03-9c35-c7763f000299" style="width:25%" class="column"><figure id="f3c21e37-f813-47d7-bde3-db4185004f30" class="image"><a href="ORDER%20BY%201629da069fdb46e3b0d4d5c0f11a334c/Screen_Shot_2023-04-20_at_12.45.39_PM.png"><img style="width:261px" src="ORDER%20BY%201629da069fdb46e3b0d4d5c0f11a334c/Screen_Shot_2023-04-20_at_12.45.39_PM.png"/></a></figure></div><div id="414e74fd-4feb-4010-8809-f5889867805d" style="width:75%" class="column"><pre id="014f9b93-8244-4d0f-afef-bb022ea04c4e" class="code"><code>SELECT
 first_name,
 last_name
 FROM actor
-ORDER BY first_name DESC, last_name</code></pre><p id="4b7ce227-c04d-4ab8-8e90-a6a46ff64c77" class="">We can also specify order for every column separately</p><p id="5d412399-1916-4a5e-add5-5d2fc4c5a2e4" class="">
+ORDER BY first_name DESC, last_name</code></pre></div></div><p id="4b7ce227-c04d-4ab8-8e90-a6a46ff64c77" class="">We can also specify order for every column separately</p><p id="5d412399-1916-4a5e-add5-5d2fc4c5a2e4" class="">
 </p><p id="3056d638-f298-4c37-96eb-976f042297a3" class="">
 </p></div></article></body></html>
