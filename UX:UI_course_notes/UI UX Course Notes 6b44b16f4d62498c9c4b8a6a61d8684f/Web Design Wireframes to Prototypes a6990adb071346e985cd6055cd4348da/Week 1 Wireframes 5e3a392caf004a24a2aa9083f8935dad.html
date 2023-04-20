@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Week 1: Wireframes</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5e3a392c-af00-4a24-a2aa-9083f8935dad" class="page sans"><header><h1 class="page-title">Week 1: Wireframes</h1><table class="properties"><tbody><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created By</th><td><span class="user"><img src="../UX%20Design%20Fundamentals%20cc18e86341c441f8af7aff6e3aafe69f/Week%204%20Interactive%20Prototype%207fd2a0e0dde742ff9d3e7a7eaa1e7e7b/485611_INoljAhL.png" class="icon user-icon"/>Anna Ha</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Created</th><td><time>@January 30, 2022 1:56 PM</time></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Last Edited Time</th><td><time>@February 8, 2022 2:19 AM</time></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last Edited By</th><td><span class="user"><img src="../UX%20Design%20Fundamentals%20cc18e86341c441f8af7aff6e3aafe69f/Week%204%20Interactive%20Prototype%207fd2a0e0dde742ff9d3e7a7eaa1e7e7b/485611_INoljAhL.png" class="icon user-icon"/>Anna Ha</span></td></tr></tbody></table></header><div class="page-body"><h2 id="c14a02ce-abbf-43a5-89dc-047893f12a7e" class="">Responsive Design</h2><hr id="6adc968f-d1af-4130-aca6-782ac91c8660"/><figure id="50e992f8-ff53-4aae-bccd-b1a41d4160fc" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-04_at_9.36.08_PM.png"><img style="width:953px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-04_at_9.36.08_PM.png"/></a></figure><figure id="48638ca7-a476-4b97-93a2-b5bb040ef057" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-04_at_9.37.27_PM.png"><img style="width:882px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-04_at_9.37.27_PM.png"/></a></figure><p id="f83fc0f4-c173-4e3a-b1fc-ed5363fd1101" class=""><a href="https://www.lukew.com/ff/entry.asp?1946">There Is No Fold</a>, by Luke Wroblewski, personal blog, April 29 2015.</p><p id="50ee2ac0-cca5-4ff6-8fad-848ca7a383cc" class=""><a href="https://web.archive.org/web/20171124234437/http://hugeinc.com/ideas/perspective/everybody-scrolls">Everybody Scrolls</a>, by Rebecca Gordon and Evan Dody, Huge Inc., December 3 2014.</p><p id="ea8b51e3-ad98-44d9-b025-5ee3c5fdc03b" class=""><a href="https://alistapart.com/article/responsive-web-design">Responsive Web Design</a>, by Ethan Marcotte, A List Apart, May 25 2010.</p><p id="65822770-e191-43d2-a248-b24b0305f674" class="">And finally, <a href="https://www.lukew.com/ff/entry.asp?933">here is a short primer to Luke Wroblewski’s book, Mobile First</a>, which is listed on the Course Resources page.</p><h2 id="33cdda11-d4a1-401a-8757-9a16ebd79dad" class="">Navigation Systems</h2><hr id="bce95db4-9afc-4227-b9d5-8ede38b83bcc"/><figure id="263b8419-8c1b-4d7c-a9ac-48d53e42d941" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.43.53_PM.png"><img style="width:952px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.43.53_PM.png"/></a></figure><figure id="5a808a3d-8b45-4dff-bbc0-f584c1ba988e" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.45.37_PM.png"><img style="width:734px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.45.37_PM.png"/></a></figure><p id="a93ea772-aaef-4bd5-ae52-ad8f680ec0b2" class="">If you study a lot of websites, you&#x27;ll notice that placing the primary navigation to run horizontally across the top of the page has become quite the convention. Most sides do exactly that, though another option would be to put the primary navigation running vertically on the left. And you&#x27;ll find sites that do this as well. And there&#x27;s nothing inherently wrong with that, it always depends on the project you are working on. If you, for example, have a large number of primary links, or if the labels of the links are really long, this vertical version might work better for you. But you are also allocating a pretty large area of the screen and the entire left column only to the navigation. So if you have a lot of other content to display on your pages, you&#x27;ll probably want to stick to a horizontal primary menu. In our three example sites, each one displays the primary navigation menus horizontally in the desktop version.</p><div id="a6538a11-9b23-4c1b-8520-1cc70eced7a1" class="column-list"><div id="e0fe1525-bd5a-4bab-816b-6715781e1d57" style="width:50%" class="column"><figure id="4dbcf551-0461-4cd9-a2c7-7c35c502239d" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.48.06_PM.png"><img style="width:719px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.48.06_PM.png"/></a></figure></div><div id="4d9cbdea-8819-4802-8a3a-5268531ff316" style="width:50%" class="column"><figure id="ecf1f49f-2aff-4afb-8c91-c1c3e8a882d4" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.48.16_PM.png"><img style="width:736px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.48.16_PM.png"/></a></figure></div></div><p id="fdde0b3a-0bd4-45c1-849a-09d083489c62" class="">We could have a drop-down menu when the user hovers over a primary menu item. This would allow the user to get to the secondary pages without having to visit the primary landing page first. On the secondary pages, we could also have a secondary menu. In this case I added it to the left side of the screen going down vertically. This would allow the user to quickly navigate between different secondary pages and it also provides a quick overview of what other pages exist in this section.</p><figure id="bd8120bc-6750-4c9b-b2ca-8337ec86e8df" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.50.45_PM.png"><img style="width:949px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.50.45_PM.png"/></a></figure><figure id="45ea7569-46fb-4101-9818-30c9e47ee951" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.51.12_PM.png"><img style="width:727px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.51.12_PM.png"/></a></figure><p id="1a70b6cf-8bbe-41d8-b551-eaa9dd4f02a9" class="">This navigation is often placed in the top right corner beside and above the primary navigation. The other two links we&#x27;ll include here are links to our social media, Instagram and Facebook in this case. They will be available on every single screen, but they&#x27;re pretty discrete and do not get in the way of the contents.</p><figure id="7748029a-5ba6-426e-a7c9-8b5fd0f724a4" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.52.53_PM.png"><img style="width:951px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.52.53_PM.png"/></a></figure><figure id="1ae124e9-6960-4cd3-8615-5b5a49318efc" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.53.56_PM.png"><img style="width:714px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.53.56_PM.png"/></a></figure><p id="9280ff54-a2de-46b3-994d-f0c656f1b3cf" class="">These are shortcuts to other content that are dependent on the current context.</p><figure id="a2cb9275-7514-48b2-887c-15ace304c9ea" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.55.08_PM.png"><img style="width:716px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.55.08_PM.png"/></a></figure><p id="03382f14-8c26-4245-90d3-7129e45b6c17" class="">Inline links are simply links embedded in the content itself, that&#x27;s what made the web so famous in the first place. The ability to hyperlink a word to any other page in the entire worldwide web.</p><figure id="6a76cd6d-0650-4bb0-a897-655f6c99ab08" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.55.54_PM.png"><img style="width:944px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.55.54_PM.png"/></a></figure><figure id="30e85516-dfda-405d-8e77-6f83dffbaf67" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.56.13_PM.png"><img style="width:719px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.56.13_PM.png"/></a></figure><p id="d32385d8-3280-4bba-80d0-9fe1604598d9" class="">Whenever you have a long list of options, let&#x27;s say a list of employees or a list of blog posts or a list of states, it makes sense to display them as an index. Here&#x27;s an example of links to previously placed orders that are presented as a list sorted by dates.</p><figure id="1c591eb8-79ba-4ea8-928b-a878af9be58f" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.57.10_PM.png"><img style="width:940px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.57.10_PM.png"/></a></figure><figure id="cdfb94be-e550-488d-abd8-d58111ff7c18" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.57.34_PM.png"><img style="width:731px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_4.57.34_PM.png"/></a></figure><p id="0706244b-1d75-4721-93c9-16075c56114c" class="">So, in our wireframe example here, let&#x27;s add the Search functionality as an option to the utility navigation. That&#x27;s usually a great spot for it and for most sites, it&#x27;s appropriate to have an icon often a magnifying glass that will bring up a Search field after being clicked.</p><p id="12fc5c87-913a-419b-b41b-7a6487aa1515" class="">If your site relies on Search as a primary way of navigation, then you probably want to display the Search field at all times as part of your header design. That way, a user doesn&#x27;t have to perform an extra click to reveal the Search fields. But on sites where the Search is merely a supplemental navigation tool, it&#x27;s best to remove the Search field until it is needed.</p><h3 id="ca3ebad7-33d2-46b6-aeaf-6ec3fcf865c0" class="">Wayfinding</h3><p id="14afebac-ac9a-4ca7-86f5-39773ddc2e8c" class="">When we are designing websites, we should make sure that people don&#x27;t get lost in them because if they do get lost or even if they are just a little confused of where they are, it will trigger a pretty potent negative reaction, and the usability of our site suffers.</p><figure id="ce77736b-030a-45a1-9cb6-3f0547701b1b" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_5.00.16_PM.png"><img style="width:950px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_5.00.16_PM.png"/></a></figure><div id="486a47d9-8825-4184-acf1-2ca2990aceb3" class="column-list"><div id="5308d816-c65c-4d80-90ab-f79f52072b06" style="width:50%" class="column"><figure id="4ffe4d72-66d3-42a3-96a9-d3b6d646134e" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_5.00.33_PM.png"><img style="width:722px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_5.00.33_PM.png"/></a></figure><figure id="7a79bfe3-8094-4499-95d0-1bf8aa6c32ae" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_5.01.39_PM.png"><img style="width:722px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_5.01.39_PM.png"/></a></figure><p id="354a0b51-aa94-4c21-bbd4-ca2e67746553" class="">
+</p><figure id="3b8f1c48-cc89-49af-affc-1243b240d6fe" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_5.02.42_PM.png"><img style="width:709px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_5.02.42_PM.png"/></a></figure><p id="2090696d-0d89-48d6-8aef-b0714d50e96c" class="">
+</p><figure id="594ff863-1bb0-46dc-b897-9ee2cc817ef8" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_5.04.44_PM.png"><img style="width:721px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_5.04.44_PM.png"/></a></figure><figure id="85457706-e67a-447e-a6d5-b3fd8397e36c" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_5.07.08_PM.png"><img style="width:722px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_5.07.08_PM.png"/></a></figure><figure id="6f80d13a-40ec-4d63-9609-18777ddb786e" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_5.07.43_PM.png"><img style="width:725px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-06_at_5.07.43_PM.png"/></a></figure></div><div id="95bc8228-74c4-4fe2-9f53-7ee8913410a4" style="width:50%" class="column"><p id="b2a0332d-0ccd-4458-b9fb-04d5652e3220" class="">Now, by site identification, I mean that the user should be able to tell at all times simply what site they are on, and one of the best ways to communicate this is to have the site&#x27;s logo or the site&#x27;s title in the header on every page. The convention is to have it in the upper left corner, and I would recommend that location as a starting point for your design</p><p id="fe62ce7e-2adc-4181-adf4-c43c8320b52b" class="">
+</p><p id="e96d6a22-4d79-45d6-b4be-a1badf9a5d30" class="">Another important wayfinding element is the page title. Let the user know what page they&#x27;re on. Here, in this wireframe, we can see the page title, &quot;Our Team&quot;, is presented clearly, enlarged type towards the top of the page.</p><p id="a5f6305e-8c5f-4e2e-acf6-d86cb1e60b6f" class="">
+</p><p id="c940c985-5fb7-41bd-9037-4b921bbb9186" class="">
+</p><p id="7c800aa5-a417-4a54-aed6-d1a76c16f528" class="">In your navigation, you should highlight the link of this section that the visitor is currently on. In this wireframe, you can see that we are currently in the About section since that link in the primary navigation is highlighted. Furthermore, you also see that we are on the Our Team page in the secondary menu since that link is also differently formatted from the rest.</p><p id="4102538d-2d92-4865-b643-f2afef5e2f2f" class="">
+</p><p id="f78bfb49-001d-42ad-a2f9-a3501fb5351d" class="">Breadcrumbs for websites indicate the path that the user has traveled along the information architecture of your site, or if a user landed on this page some other way, breadcrumbs communicate how this page fits in with the content hierarchy. Here, the breadcrumb situates the Our Team page as part of the About section, which in turn can be accessed from the homepage, and a user can click on any of the links in the trail to get back to a prior page</p><p id="75e9cbe0-7a3a-4eea-96c5-e2e89eda1872" class="">
+</p><p id="0a637b24-182c-402d-a337-da37d631034a" class="">It&#x27;s a convention that the logo of the site will link back Home, and on many sites, that&#x27;s the only link back to the homepage. If you want to be more explicit about how to get back to the homepage, you could add that as a link to the primary navigation.</p><p id="4755c555-3812-4483-ac5b-b4f6f5944e25" class="">
+</p><p id="ded54d95-f89e-441f-9df3-b8cbbed11d38" class="">
+</p><p id="e7df5496-a439-4b80-8710-93632f7ccd6c" class="">One overarching strategy of helping your users to orient themselves is to be consistent: Have your logo on every page of your site in the same location, have your page title look consistent, use a consistent way of indicating which link is currently active, don&#x27;t move or unexpectedly change your primary navigation from page to page. Have breadcrumbs on every page and allow users to link back Home by clicking your logo on every page, etc.</p></div></div><h2 id="8adc6909-d308-4919-9d5e-d3db4bff859c" class="">Common Design Pattern</h2><hr id="ee94d79b-6b9d-46a7-a2de-025c2ba5272f"/><figure id="fb2e59c9-0836-478a-88de-ba919415f79d" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_1.19.58_AM.png"><img style="width:1702px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_1.19.58_AM.png"/></a></figure><div id="c09f9229-e558-48f5-aa86-015bbb108ba0" class="column-list"><div id="555d2b81-dfb4-4826-a7a8-cc3163270713" style="width:50%" class="column"><p id="882942d0-0006-42df-852c-c08a72c004af" class="">Header:</p><ul id="c1aa0d27-e965-43ce-bd92-00efd72c128f" class="bulleted-list"><li style="list-style-type:disc">logo</li></ul><ul id="42281606-0489-4761-9f25-8d3e6e273794" class="bulleted-list"><li style="list-style-type:disc">navigation</li></ul><ul id="50160a5d-1818-4468-95e0-64bcf79cc2f4" class="bulleted-list"><li style="list-style-type:disc">search</li></ul><ul id="edfd8f50-46a2-4a5f-91f5-3e1fcdae6a17" class="bulleted-list"><li style="list-style-type:disc">site alerts</li></ul></div><div id="6dfd3b71-bbab-4b67-ac3f-be00b3ec727f" style="width:50%" class="column"><p id="9f2de9d9-71aa-4fa1-8ea6-096927910415" class="">Footer:</p><ul id="99c435f2-f2fe-4be5-97d9-badb43c5c0f9" class="bulleted-list"><li style="list-style-type:disc">copyright</li></ul><ul id="e95265e9-84f8-4116-8246-0954e0cfa364" class="bulleted-list"><li style="list-style-type:disc">navigation/sitemap </li></ul><ul id="25be980f-815d-42e0-aea7-88857d54ccdb" class="bulleted-list"><li style="list-style-type:disc">logo</li></ul><ul id="b65c16a0-3dc8-4dc5-8504-55c4851f649e" class="bulleted-list"><li style="list-style-type:disc">social media links</li></ul></div></div><div id="ce0bf27b-0cbd-4328-8984-7a3e8e23ea8b" class="column-list"><div id="447d44b8-060a-4ad5-a05d-e1977be8b426" style="width:50%" class="column"><p id="dda38d3b-6cb6-4a33-8c0c-49717ad70b15" class="">Sidebar:</p><ul id="41e5c0cf-0a1e-4e6d-b21a-bfc6d03d20aa" class="bulleted-list"><li style="list-style-type:disc">navigation</li></ul><ul id="f2841ee5-8fc5-43d3-8a5b-4ec6c0977986" class="bulleted-list"><li style="list-style-type:disc">ads</li></ul></div><div id="2decdea1-5151-4238-8fb1-01130fd98baa" style="width:50%" class="column"><p id="4bf813a6-0dbc-4128-b716-7a67aaea36c9" class="">Content:</p><ul id="a2ccc4a3-961d-45c5-8554-9718249a9b24" class="bulleted-list"><li style="list-style-type:disc">hero slider</li></ul><ul id="577de4ec-597b-4541-a7ec-2d6f2b400146" class="bulleted-list"><li style="list-style-type:disc">accordions</li></ul><ul id="ac19c99e-de5b-4738-8492-6d526b854ca1" class="bulleted-list"><li style="list-style-type:disc">tabs</li></ul><ul id="521ec7bc-fdaf-4465-b005-10bb7bc443e2" class="bulleted-list"><li style="list-style-type:disc">“25/50/25” (3 columns)</li></ul></div></div><p id="5b789ccd-8bbb-4aca-b97a-f8c591d880d6" class="">Common form elements:</p><ul id="2fbe0700-2f80-4128-9b08-ef6cd226bdee" class="bulleted-list"><li style="list-style-type:disc">checkboxes (multiple options selection)</li></ul><ul id="5bc37b2d-f064-4a5a-b5a6-a017ce052c8d" class="bulleted-list"><li style="list-style-type:disc">radio buttons (one option selection)</li></ul><ul id="9c4fd247-161b-4e11-967c-b89b8d90f530" class="bulleted-list"><li style="list-style-type:disc">dropdown lists</li></ul><ul id="d3924601-76c8-4b2f-b81f-de1e5b18217d" class="bulleted-list"><li style="list-style-type:disc">text fields</li></ul><ul id="e0296f95-ee78-4228-bc52-a55c99de6f83" class="bulleted-list"><li style="list-style-type:disc">text area</li></ul><ul id="dfc5da9f-9464-42af-ace6-1041e58239fe" class="bulleted-list"><li style="list-style-type:disc">slider</li></ul><ul id="29a167d4-a17a-40b9-9353-7fafdae31b2b" class="bulleted-list"><li style="list-style-type:disc">date picker</li></ul><ul id="6086f8d6-4ab5-4fcd-8e4f-2baeee2cd99d" class="bulleted-list"><li style="list-style-type:disc">on/off (toggle switch)</li></ul><ul id="198d716b-3c9a-4487-b3dc-7e42c4bbc6fd" class="bulleted-list"><li style="list-style-type:disc">buttons</li></ul><h2 id="d8374f84-5c66-4cde-83f4-0cfeb4c1f3cd" class="">Homepage Content Strategies</h2><hr id="dd654f88-7b32-462b-82c0-8470a9bcaa9b"/><ul id="3baf1bc8-605a-41c8-a79f-afa3bd7975f9" class="bulleted-list"><li style="list-style-type:disc">communicate your voice/brand </li></ul><ul id="f92442c7-4474-44a9-acce-3fa865e3df08" class="bulleted-list"><li style="list-style-type:disc">provide navigation options</li></ul><ul id="14b6a877-d04c-4a5a-aae3-b18ae1dbe8bf" class="bulleted-list"><li style="list-style-type:disc">introduce product</li></ul><ul id="369fb880-5c1a-4b2c-abbd-d3c85de47734" class="bulleted-list"><li style="list-style-type:disc">answer: “what is this? what can i do with it? where can i start?”</li></ul><ul id="1de4d8b8-d66c-4f38-8521-087fea4a35c6" class="bulleted-list"><li style="list-style-type:disc">show some real content<figure id="56e47434-5384-4c0a-a6bf-563e604b5608" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.08.24_AM.png"><img style="width:1762px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.08.24_AM.png"/></a></figure></li></ul><h3 id="6781f1c0-d308-48c4-9ecb-da4f09876194" class="">Content</h3><figure id="3b7772cc-66f8-4959-8251-d0e234e3cc79" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.10.03_AM.png"><img style="width:1766px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.10.03_AM.png"/></a></figure><figure id="3b2e9bae-ac48-4ac7-8b79-2050fc1dc09b" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.10.21_AM.png"><img style="width:1740px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.10.21_AM.png"/></a></figure><figure id="26f1e10b-218f-458d-bc47-1749a2e4bd04" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.13.13_AM.png"><img style="width:1768px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.13.13_AM.png"/></a></figure><figure id="6d4d51dc-dd70-4065-8396-3ab9e2f81405" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.14.19_AM.png"><img style="width:1760px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.14.19_AM.png"/></a></figure><figure id="633c802c-7547-40ed-b0ad-818f211e61d9" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.15.42_AM.png"><img style="width:1756px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.15.42_AM.png"/></a></figure><figure id="5f57aa5c-3fd2-4eac-9bf9-6743ef673cf6" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.18.24_AM.png"><img style="width:1756px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.18.24_AM.png"/></a></figure><figure id="7e25c84b-c848-4150-9408-beb4fba86ede" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.18.45_AM.png"><img style="width:1772px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.18.45_AM.png"/></a></figure><figure id="fb64c76a-0e6e-4c6e-b0ae-72a043a45472" class="image"><a href="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.19.40_AM.png"><img style="width:1766px" src="Week%201%20Wireframes%205e3a392caf004a24a2aa9083f8935dad/Screen_Shot_2022-02-08_at_2.19.40_AM.png"/></a></figure><p id="2c0ee15b-da95-4d2e-8926-34c487eff015" class="">
+</p><p id="355f8a34-5569-4689-82f0-969c4adcced2" class="">
+</p><p id="2bd28983-9845-4040-8da2-c5219d9b1872" class="">
+</p><p id="3b3f3135-792f-40a3-b148-f161d6fa85f5" class="">
+</p><p id="787cc5c8-fb66-4742-87c1-cc4a2205cdfe" class="">
+</p><p id="f43f771c-8acd-49c6-8427-8be87b1c6910" class="">
+</p></div></article></body></html>

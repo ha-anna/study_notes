@@ -1,0 +1,671 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Week 1: Interface Conventions</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1a9ab7c1-a903-4208-8669-66bce51c30af" class="page sans"><header><h1 class="page-title">Week 1: Interface Conventions</h1><table class="properties"><tbody><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created By</th><td><span class="user"><img src="../UX%20Design%20Fundamentals%20cc18e86341c441f8af7aff6e3aafe69f/Week%204%20Interactive%20Prototype%207fd2a0e0dde742ff9d3e7a7eaa1e7e7b/485611_INoljAhL.png" class="icon user-icon"/>Anna Ha</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Created</th><td><time>@December 1, 2021 12:40 AM</time></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Last Edited Time</th><td><time>@December 1, 2021 1:37 AM</time></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last Edited By</th><td><span class="user"><img src="../UX%20Design%20Fundamentals%20cc18e86341c441f8af7aff6e3aafe69f/Week%204%20Interactive%20Prototype%207fd2a0e0dde742ff9d3e7a7eaa1e7e7b/485611_INoljAhL.png" class="icon user-icon"/>Anna Ha</span></td></tr></tbody></table></header><div class="page-body"><h2 id="cb3de200-861b-435e-8a68-18852da7823e" class="">A Brief Historical Overview of Interface Design</h2><hr id="522ba86b-c370-4def-8795-e61f3830fe20"/><figure id="c0f3b1c8-e6ab-48a2-a40d-057722b6f6ca" class="image"><a href="Week%201%20Interface%20Conventions%201a9ab7c1a9034208866966bce51c30af/Screen_Shot_2021-12-01_at_12.43.00_AM.png"><img style="width:957px" src="Week%201%20Interface%20Conventions%201a9ab7c1a9034208866966bce51c30af/Screen_Shot_2021-12-01_at_12.43.00_AM.png"/></a></figure><p id="aacbce96-ce77-415b-bb48-9c4c573b7675" class="">We can see from this list how various different screen based activities have permeated our society and basically become more and more popular, and more ever present in our lives. And these <strong>screens have become multifunctional </strong>as they&#x27;ve advanced.</p><p id="f749d2fe-f6e0-479c-bd48-66f19219cdda" class="">They&#x27;ve gone <strong>from having a single use to having a multiple use.</strong> In a lot of ways, those early screen based experiences were rooted in the real world. They were very <strong>fixed</strong>. You had to physically have the calculator in your hand, and had very limited functionality with buttons that you pressed, and the interface itself was not even a digital one, it was a physical button.</p><figure id="9740cf60-9213-4acd-831d-44abf2f7d4f9" class="image"><a href="Week%201%20Interface%20Conventions%201a9ab7c1a9034208866966bce51c30af/Screen_Shot_2021-12-01_at_12.44.21_AM.png"><img style="width:946px" src="Week%201%20Interface%20Conventions%201a9ab7c1a9034208866966bce51c30af/Screen_Shot_2021-12-01_at_12.44.21_AM.png"/></a></figure><p id="eadee010-e049-486a-af23-802943d7cf1a" class="">Whereas, nowadays we&#x27;re looking much more at what you might call<strong> a transfixed experience</strong>. We&#x27;re looking at multiple things that you can do in the digital world. You can carry a phone, or a laptop, or an iPad from wherever you want to go in the world, you carry them around with you, but what all of these early models have in common, is that <strong>they&#x27;re all based around a screen.</strong></p><figure id="33b16a0f-4136-4569-bb31-3decd21b3b0e" class="image"><a href="Week%201%20Interface%20Conventions%201a9ab7c1a9034208866966bce51c30af/Screen_Shot_2021-12-01_at_12.48.38_AM.png"><img style="width:941px" src="Week%201%20Interface%20Conventions%201a9ab7c1a9034208866966bce51c30af/Screen_Shot_2021-12-01_at_12.48.38_AM.png"/></a></figure><p id="7eb3d259-701e-4a9b-b088-f0202529cc67" class="">When it comes to an ATM, once we try to think about it in graphic design terms, in terms of what the actual user interface might be, it becomes a little more tricky than you might think, even for such a simple interaction. To begin with, we&#x27;d need to have a series of numbers so that we can enter a PIN, and also so we can enter an amount of money we might want to obtain. So, you could think about the keypad itself, its physical arrangement, and how that might have a connection to the human hand. And if we put these numbers in, we can think about, these could be buttons that you could press, but, wait a minute, if you press them, nothing really happens. How do you know if you&#x27;ve actually done anything by pressing the button? So, straight away we can understand that when we interact with an interface, we need to have some kind of feedback, some kind of result. </p><blockquote id="e24774be-9438-44cf-aa01-d299283b1374" class="">Otherwise, how do we know if the interface is working? How can we trust that interface? </blockquote><p id="4204b02b-cacc-4f40-aef8-429613832c18" class="">Even in this very simple model, there has to be some <strong>feedback.</strong> So, if we press a key for example, we want to see on a separate screen that those numbers appear, so that we know that our interaction has actually worked, but what happens if we do something wrong? What happens if we press the wrong number? Well, we&#x27;re going to need an extra key. We&#x27;re going to need a <strong>&quot;Cancel&quot; key for example, in case we make a mistake</strong>. And we might also need an &quot;<strong>Okay&quot; key for when we press the right number</strong>. </p><p id="6ee679ae-921c-4e03-bcaf-f65231f9d8c0" class="">So, even from this very simple idea of looking at how a keypad works, we figured out some very important principles for interactivity:</p><ul id="e6ca335a-61f0-485b-a25c-91ed19dfaae4" class="bulleted-list"><li style="list-style-type:disc">The fact that we need to have feedback as a user, </li></ul><ul id="dd772a93-154d-4326-8ec1-afdc948534d6" class="bulleted-list"><li style="list-style-type:disc">the fact that if we make a mistake we need to be able to correct it, </li></ul><ul id="8a78e96f-b17f-48e8-9a0d-e0a5e0bc4e33" class="bulleted-list"><li style="list-style-type:disc">the fact that we need to say that things are okay when we&#x27;ve done them right.</li></ul><h2 id="2ce5cefc-9dd3-487a-a86f-1dbff4270be2" class="">Interface Conventions: Theory</h2><hr id="af9fd22b-6070-4e3a-8f48-5aa260d89201"/><figure id="76815226-1f5d-41af-a7c5-5aba7d024ede" class="image"><a href="Week%201%20Interface%20Conventions%201a9ab7c1a9034208866966bce51c30af/Screen_Shot_2021-12-01_at_1.12.49_AM.png"><img style="width:944px" src="Week%201%20Interface%20Conventions%201a9ab7c1a9034208866966bce51c30af/Screen_Shot_2021-12-01_at_1.12.49_AM.png"/></a></figure><ul id="1588268d-1e39-422f-afbe-efc7da0f5e4c" class="bulleted-list"><li style="list-style-type:disc">real world knowledge<ul id="7a4f1312-4fd3-4ba3-ae68-0a3e4573cd01" class="bulleted-list"><li style="list-style-type:circle">Real world knowledge is based on analog models. Early interfaces were clearly based on these real world models, where there were simulations of physical things and objects that existed in the real world. It&#x27;s less so with contemporary interfaces, but some of that vocabulary still lingers on. We still talk about buttons and menus for example, that are physical things.</li></ul></li></ul><ul id="e00787f6-eac3-43ec-85d1-ec445379ad4c" class="bulleted-list"><li style="list-style-type:disc">learned behaviour<ul id="f856135c-60a5-4632-b7cb-7bf90dee72f9" class="bulleted-list"><li style="list-style-type:circle">We already know how interface elements work. For instance the button, even though this is a flat representation on the screen rather than being physical, we draw a correlation between how the button works in the real world and then knowing how the button is going to work in the digital world. </li></ul></li></ul><ul id="6394f7e5-32f6-4305-8e4d-5506cdc301fb" class="bulleted-list"><li style="list-style-type:disc">cause and effect<ul id="2cee94f4-098f-406f-8c70-7cc9eb21e0c4" class="bulleted-list"><li style="list-style-type:circle">Cause and effect looks at action and reaction. When we press a button, we know that something is going to happen, we have an expectation already about how it works. Often the thing that happens is going to happen somewhere else but if that button is combined with words or numbers or symbols that are associated with it, then we have an expectation of what the button is going to do, of what&#x27;s actually going to happen when we press it. </li></ul></li></ul><ul id="14277d46-a697-4526-a18f-7e4e450b3394" class="bulleted-list"><li style="list-style-type:disc">logic/familiarity/consistency<ul id="6d88f6b6-425c-405b-8b30-8364c5895c37" class="bulleted-list"><li style="list-style-type:circle">Consistency, looks at a logical or systematic approach to design. If our buttons look the same, then they should act in a similar or systematic way. If you press one button and you learn how it works, then you have a pretty good idea about how the next button is going to work. <strong>Button shouldn&#x27;t look the same but then work in a different way. </strong>We&#x27;re really trying to figure out a consistent system, so if we know we press this button that is a &quot;one,&quot; when we press the &quot;eight&quot; button, we know that the &quot;eight&quot; is going to work in the same way.</li></ul></li></ul><ul id="81291e92-3fdc-46fd-a4a7-f10fbf849990" class="bulleted-list"><li style="list-style-type:disc">fast/seamless <ul id="23b03b01-6b9f-4d33-b148-8b666e787455" class="bulleted-list"><li style="list-style-type:circle">Interactions should be seamless, it should be fast and it should be easy, it should be as few steps as possible when you&#x27;re asking a user to interact with something. When you interact with an interface, you want immediate results without delay. You want whatever you want to happen and you want it to happen now. There&#x27;s nothing worse than clicking or tapping and nothing happening. It breeds frustration in the user and leads to dissatisfaction with the interface.</li></ul></li></ul><ul id="a7e6bfee-fcd8-46ea-a7ae-d324452138be" class="bulleted-list"><li style="list-style-type:disc">immediate intuition<ul id="5cd69c66-d40d-4c28-8cab-5d7a7e99a636" class="bulleted-list"><li style="list-style-type:circle">A few interactions can teach a lot. Once a user learn how a button works, they can intuitively know how a whole set of buttons work. By extension, they might also know how similar digital buttons work even if they&#x27;re going to look and function in a different way. So, once you&#x27;ve figured out a way of interacting, that way can be applied to a lot of different forms. If you know how this button works, then you know how old buttons work and of course this is very useful because those kind of things build into interface conventions that are consistent across a lot of platforms.</li></ul></li></ul><ul id="3d1979ce-c097-414c-9733-13e6bf50f00a" class="bulleted-list"><li style="list-style-type:disc">payoff/results/fulfillment<ul id="24dcd833-54a3-4416-be9a-11e1cf8bd283" class="bulleted-list"><li style="list-style-type:circle">Fulfillment, in other words, payoff or results. If we take the time to press a button, to interact with an interface, we expect something to happen. We expect a small sense of gratification or fulfillment. We want to believe that a screen-based digital interaction has real value. If we take the time to press the button, we expect something in return. As a user, it gives us a sense of value with the interface that we&#x27;re interacting with. It gives us a sense that we&#x27;re important, that whatever we do, we&#x27;re going to get something back from the interface itself from our investment. </li></ul></li></ul><ul id="cec929c6-e942-4710-b300-4a6aa5327a1e" class="bulleted-list"><li style="list-style-type:disc">undo/redo/confirm<ul id="784bb0c8-ea62-4e32-a171-ceb857d639cc" class="bulleted-list"><li style="list-style-type:circle">The user wants to feel safe, to know that if they make a mistake they can nearly always undo or redo it in the digital world. It&#x27;s a key thing that we love about the digital world as opposed to the real world. In the digital world, we have an ability to undo our actions. If we broke something in a digital experience, we could hit command+z and undo it, and it wouldn&#x27;t be broken anymore. But if we break something in the real world, in the analog world, it&#x27;s broken for good. So, we like to know that if we press a button, nothing bad is going to happen.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8e5623d4-4a1f-466b-9e03-d932419727c7"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">It&#x27;s really important to understand these basic concepts of how interaction works, because they&#x27;re a foundation to understanding that the blank screen that we start with when we design an interface is not necessarily a blank slate. There are preexisting modes of interacting and preexisting interface conventions that we need to consider. We need to think about what does the user bring to the interface in terms of what the user already knows about how interfaces work, how interaction works. </div></figure></li></ul><h2 id="f34b4fcd-c7c8-45c1-8277-841586edf91e" class="">Interface Conventions: Application</h2><hr id="13a2224f-864f-472d-80cd-0311f308380e"/><figure id="25d6b605-5540-42bb-8c11-63d5635af6d3" class="image"><a href="Week%201%20Interface%20Conventions%201a9ab7c1a9034208866966bce51c30af/Screen_Shot_2021-12-01_at_1.28.52_AM.png"><img style="width:949px" src="Week%201%20Interface%20Conventions%201a9ab7c1a9034208866966bce51c30af/Screen_Shot_2021-12-01_at_1.28.52_AM.png"/></a></figure><p id="346facba-849c-4bee-be7f-878f6b9db99b" class="">Our basic human interactions and human ergonomics have had a strong impact on what kinds of things can actually happen in the interface on the screen, because we&#x27;ve rearranged the elements we&#x27;ve made it quite dysfunctional. If we put it back to how it was, we can look and see what happens when we, as human beings, press the key.</p><p id="f5e98983-1dc8-4d3b-8c15-fd988b65c422" class="">It&#x27;s important to know about these physical conventions because these lead into the digital conventions. Over the years, Interface designers have taken into account to user&#x27;s physicality, to develop the best solutions of how interfaces should work. And these digital conventions have become standardized to the point of interface invisibility. </p><figure id="ea0f8e8b-fad3-470f-b88e-dc9c8445480b" class="image"><a href="Week%201%20Interface%20Conventions%201a9ab7c1a9034208866966bce51c30af/Screen_Shot_2021-12-01_at_1.34.17_AM.png"><img style="width:949px" src="Week%201%20Interface%20Conventions%201a9ab7c1a9034208866966bce51c30af/Screen_Shot_2021-12-01_at_1.34.17_AM.png"/></a></figure><p id="375ad629-9a05-439d-89b9-6c3043068623" class=""><mark class="highlight-pink_background"><a href="https://osmanassem.com/what-is-user-interface-ui-design-conventions-and-elements/">What is User interface (UI) design? Conventions and Elements</a></mark></p><hr id="da5d004c-bc18-45d0-99f5-336844117e34"/><p id="f7458984-bfc0-44da-a39f-5a07417186e4" class=""><a href="https://xd.adobe.com/ideas/process/ui-design/4-golden-rules-ui-design/">The 4 Golden Rules of UI Design</a>, by Nick Babich, Adobe Blog, February 7 2018.</p><p id="9c0569c4-9a8c-46ad-aee4-3bb7d6bc0150" class=""><a href="https://www.nngroup.com/articles/ten-usability-heuristics/">10 Usability Heuristics for User Interface Design</a>, by Jakob Nielsen, Nielsen Norman Group website, January 1 1995.</p><p id="6fa95de2-df30-4030-ba55-af2685ae8b97" class=""><a href="https://www.interaction-design.org/literature/article/principle-of-consistency-and-standards-in-user-interface-design">Principle of Consistency and Standards in User Interface Design</a>, by Euphemia Wong, Interaction Design Foundation, July 2018.</p><p id="8e5fbe96-2614-45a7-a512-ede3900dad4e" class="">
+</p><p id="29442fef-2fcb-432b-b1bc-4f4d9729128a" class="">
+</p></div></article></body></html>

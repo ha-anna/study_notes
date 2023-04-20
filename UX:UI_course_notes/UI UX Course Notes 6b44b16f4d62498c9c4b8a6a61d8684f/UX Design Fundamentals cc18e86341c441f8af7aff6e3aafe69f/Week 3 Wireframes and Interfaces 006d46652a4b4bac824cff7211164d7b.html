@@ -1,0 +1,675 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Week 3: Wireframes and Interfaces</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="006d4665-2a4b-4bac-824c-ff7211164d7b" class="page sans"><header><h1 class="page-title">Week 3: Wireframes and Interfaces</h1><table class="properties"><tbody><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created By</th><td><span class="user"><img src="Week%204%20Interactive%20Prototype%207fd2a0e0dde742ff9d3e7a7eaa1e7e7b/485611_INoljAhL.png" class="icon user-icon"/>Anna Ha</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Created</th><td><time>@December 23, 2021 4:16 PM</time></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Last Edited Time</th><td><time>@December 26, 2021 7:34 PM</time></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last Edited By</th><td><span class="user"><img src="Week%204%20Interactive%20Prototype%207fd2a0e0dde742ff9d3e7a7eaa1e7e7b/485611_INoljAhL.png" class="icon user-icon"/>Anna Ha</span></td></tr></tbody></table></header><div class="page-body"><h2 id="450480af-3521-4427-9c0c-aa4399552f69" class="">Nielsen&#x27;s Usability Heuristics (1990)</h2><hr id="a14bbbde-c781-4f78-8c3a-5e19dfaeadcd"/><figure id="e91da72c-561a-4211-8f37-fe0c769e3211" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.44.32_PM.png"><img style="width:941px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.44.32_PM.png"/></a></figure><figure id="15ca951a-dd13-4154-86c7-6589e06f1543" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.45.13_PM.png"><img style="width:939px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.45.13_PM.png"/></a></figure><figure id="f8d276b6-f78b-4075-bf49-af9e15787ac8" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.45.25_PM.png"><img style="width:940px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.45.25_PM.png"/></a></figure><figure id="4a1932c8-6313-41c8-9eb8-fb3d68acf0d5" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.45.47_PM.png"><img style="width:934px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.45.47_PM.png"/></a></figure><figure id="2ae3b86d-51f0-4ec3-8799-5b906f365fff" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.45.59_PM.png"><img style="width:935px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.45.59_PM.png"/></a></figure><figure id="f0183b5f-5915-4bc2-af85-98df8df48e54" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.46.13_PM.png"><img style="width:938px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.46.13_PM.png"/></a></figure><figure id="77ff1cf4-5a39-4a87-a82f-231c8087d19d" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.46.28_PM.png"><img style="width:939px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.46.28_PM.png"/></a></figure><figure id="203f101e-4885-45ff-99aa-067373dc5489" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.46.47_PM.png"><img style="width:939px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.46.47_PM.png"/></a></figure><figure id="0fc93fb9-7261-4b73-b08e-0b18febf8832" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.47.00_PM.png"><img style="width:946px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.47.00_PM.png"/></a></figure><figure id="4785c5d1-d67a-4268-b7f7-ded9ab7a378a" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.47.17_PM.png"><img style="width:939px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.47.17_PM.png"/></a></figure><figure id="84210594-4818-4344-92f5-424f7f4f7f3b" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.47.29_PM.png"><img style="width:938px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.47.29_PM.png"/></a></figure><h2 id="704f0a85-d454-4052-b5f8-3583e060ca2d" class="">Working with Wireframes 1</h2><hr id="77163d2c-9419-4678-af8a-2f0acfde5cb9"/><figure id="127c1e94-a991-4c61-9d96-c8e38e0dfc34" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.52.11_PM.png"><img style="width:925px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.52.11_PM.png"/></a></figure><p id="fc7deca5-c16b-4637-bc0a-55c0aa3f3c49" class="">Our wireframes are normally <strong>functional, minimal, consistent and user-centric</strong>. Our wireframes will point more directly towards a finished form, but they&#x27;re still not the finished form themselves. Don&#x27;t get caught up in details in your wireframe, don&#x27;t be too fussy or obsess about small elements.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="e9954fc0-8f77-41da-8da7-48e7578f36cc"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Your wireframes need to be simple and clear, you want to create an accurate blueprint for your prototype.</div></figure><p id="25bde670-394a-4949-aa80-3f52e20095a4" class="">
+</p><figure id="7b281764-54db-46c2-aaab-c4a60fe170f9" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.55.28_PM.png"><img style="width:936px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.55.28_PM.png"/></a></figure><figure id="02b059ab-6e7f-4880-9e7a-31f6c5bf0771" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.56.20_PM.png"><img style="width:939px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.56.20_PM.png"/></a></figure><p id="79a67732-8e6a-4709-b214-7ad1de6a1149" class="">
+</p><div id="9f030c1a-b6d6-4b7b-9653-a71f9c0903cc" class="column-list"><div id="6e338e03-4985-4a2f-92b3-ad9534892720" style="width:43.75%" class="column"><figure id="576316f6-2a04-465e-bd49-dff714f56bea" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.57.44_PM.png"><img style="width:631px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.57.44_PM.png"/></a></figure></div><div id="3d62fa37-8d1b-4665-8e75-b9a435aa3f49" style="width:56.25%" class="column"><figure id="ea8259a8-8aea-41ee-880e-bf65eee7806f" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.57.55_PM.png"><img style="width:894px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.57.55_PM.png"/></a></figure></div></div><div id="a2cdddc1-a529-463c-b4ad-e22f2fc395ab" class="column-list"><div id="105987c1-ed3b-4841-a4a4-6f1920f82b5c" style="width:50%" class="column"><figure id="c3bb561d-72e9-434e-bc6a-821373e6bde6" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.58.17_PM.png"><img style="width:941px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_5.58.17_PM.png"/></a></figure></div><div id="fa9f0b7c-09e4-4186-a811-f15753b3b334" style="width:50%" class="column"><figure id="08b8b3e5-d940-4657-8fc7-6081eb941518" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.00.02_PM.png"><img style="width:927px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.00.02_PM.png"/></a></figure></div></div><div id="581d3b35-0405-47e0-8621-940c2b6ceb13" class="column-list"><div id="8dddd85a-e9c9-40ec-810b-acdff354e136" style="width:50%" class="column"><figure id="e326079f-ae69-45c3-bb01-998f6132608d" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.01.34_PM.png"><img style="width:938px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.01.34_PM.png"/></a></figure></div><div id="b3ca2f44-1e52-435b-bb2a-553d05e297fe" style="width:50%" class="column"><figure id="50ca6dca-2500-4735-8aa2-003201136f99" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.01.43_PM.png"><img style="width:935px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.01.43_PM.png"/></a></figure></div></div><div id="85bef616-00ea-49ac-ba0c-5ac8283c2981" class="column-list"><div id="68c563b2-765c-4d57-8d50-28766b86882f" style="width:50%" class="column"><figure id="ca39a4bf-24ed-4145-ad52-9cc2893c9634" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.01.57_PM.png"><img style="width:943px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.01.57_PM.png"/></a></figure><figure id="cd90e26e-3371-47a6-a632-31a15929d016" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.02.26_PM.png"><img style="width:941px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.02.26_PM.png"/></a></figure></div><div id="6a7ce234-59f4-4991-b133-fc9e117113bb" style="width:50%" class="column"><figure id="a15f0a68-2a83-4e54-b80f-3b1c74e447c5" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.02.04_PM.png"><img style="width:936px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.02.04_PM.png"/></a></figure><figure id="99f4e1c2-fa92-420b-8068-4ddfb1794f94" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.02.55_PM.png"><img style="width:938px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.02.55_PM.png"/></a></figure></div></div><div id="c3a3bb55-2dd9-4b0f-883d-4c37f4e62624" class="column-list"><div id="831a220f-fd7a-4285-bf75-ccce33360fbf" style="width:50%" class="column"><figure id="48b4862e-e776-4c45-8121-042480e8c9e7" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.03.16_PM.png"><img style="width:933px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.03.16_PM.png"/></a></figure><figure id="905d7e73-1cbf-42a8-9705-b494a7e6f9ff" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.04.01_PM.png"><img style="width:936px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.04.01_PM.png"/></a></figure></div><div id="863066d3-15f8-445e-86dd-1be38441be2f" style="width:50%" class="column"><figure id="376c0d49-6254-41fc-986d-13f2312e40f9" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.03.44_PM.png"><img style="width:926px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.03.44_PM.png"/></a></figure><figure id="3c24064e-de28-4fda-939e-da9be7abdbb6" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.04.14_PM.png"><img style="width:930px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.04.14_PM.png"/></a></figure></div></div><figure id="c980f8b3-eb12-44b4-8e1a-a066f3d4525c" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.04.39_PM.png"><img style="width:941px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.04.39_PM.png"/></a></figure><h2 id="0724a716-5fe8-4c36-8b67-8f7e3d7f45d2" class="">Working with Wireframes 2</h2><hr id="6935cf5d-7fdb-4bbe-afa4-1f9618793be3"/><figure id="dd67b9c6-2480-4e72-a9a9-bd88dcde0fd3" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.05.49_PM.png"><img style="width:931px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.05.49_PM.png"/></a></figure><figure id="80e61fc9-fa16-4e8a-8b05-b67213483719" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.07.00_PM.png"><img style="width:932px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.07.00_PM.png"/></a></figure><figure id="b48ecf68-02cb-41d9-b295-43b04482bc7a" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.07.27_PM.png"><img style="width:937px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.07.27_PM.png"/></a></figure><figure id="ea3b12f9-132d-4e25-90d5-138dd7c52204" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.07.42_PM.png"><img style="width:934px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.07.42_PM.png"/></a></figure><figure id="1f3c319f-a21a-44e5-9cba-7ef45887c3cb" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.08.13_PM.png"><img style="width:936px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.08.13_PM.png"/></a></figure><figure id="0d13a3c0-43c3-4b39-bca0-f6ece389fe79" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.08.37_PM.png"><img style="width:933px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.08.37_PM.png"/></a></figure><figure id="f72ff78f-6b9e-4e8a-bd1f-5161dfc1e357" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.08.52_PM.png"><img style="width:944px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.08.52_PM.png"/></a></figure><figure id="0d60e9d9-acd6-472d-8e60-5fbd08a89c62" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.09.05_PM.png"><img style="width:928px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.09.05_PM.png"/></a></figure><figure id="ca51a8b9-7203-4137-ad76-5b4337eeb2a6" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.10.17_PM.png"><img style="width:902px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.10.17_PM.png"/></a></figure><figure id="25787320-29bb-4dd2-911d-19b1c53004ae" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.10.30_PM.png"><img style="width:937px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.10.30_PM.png"/></a></figure><figure id="138036c6-0a15-4ec1-8bf6-bc00848403da" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.11.52_PM.png"><img style="width:915px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-23_at_6.11.52_PM.png"/></a></figure><p id="105bdcc1-246b-4deb-8365-5999fbaa0086" class="">So, when we&#x27;re looking at consistency and details, we are looking at these two areas in both our wireframe map and in the beginnings of our user interface design. The wireframe map makes it easy to compare screen to screen. Whereas if we take any individual screen, we can look at the user interface design and start to develop that a little bit more. When we put both of these things back together, we&#x27;re heading towards a more finished static screens, and these are the screens that we&#x27;re going to use to build our digital prototype.</p><h2 id="f9d65135-ca9e-4367-a297-712d92ecf0fa" class="">Working with Wireframes 3</h2><hr id="b96f8ddf-c134-4462-bd15-86c78e79d404"/><figure id="8c3ad7ae-f2ec-4762-a7d0-3effa6edf805" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.19.40_PM.png"><img style="width:947px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.19.40_PM.png"/></a></figure><figure id="af82f0d3-8119-4d84-9b8e-265b1901a0c6" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.19.52_PM.png"><img style="width:945px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.19.52_PM.png"/></a></figure><figure id="08db05f2-0260-4271-a004-51710a035308" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.20.09_PM.png"><img style="width:949px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.20.09_PM.png"/></a></figure><figure id="bcfae9a3-5021-4eb8-9620-0a27603753fb" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.20.29_PM.png"><img style="width:938px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.20.29_PM.png"/></a></figure><figure id="95fbc750-8072-4176-a8ff-3459f56cb140" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.20.46_PM.png"><img style="width:921px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.20.46_PM.png"/></a></figure><h2 id="9c966c91-ca31-4bc0-81dc-b3be0cbeafd0" class="">Setting the Visual Direction</h2><hr id="f7dea77f-f3e1-4b14-8e71-feabe90eea25"/><h3 id="77dd1d40-1f51-4686-a8dd-1f8b5549cddc" class="">Visual Direction</h3><figure id="28989cf9-e39d-4898-aa22-f06d2b975474" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.22.34_PM.png"><img style="width:950px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.22.34_PM.png"/></a></figure><figure id="4778a3d5-b4b5-460d-9b9f-e73fb1339286" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.22.56_PM.png"><img style="width:941px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.22.56_PM.png"/></a></figure><figure id="b4ecbf40-2406-4065-bde9-e41ea01e35cc" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.23.38_PM.png"><img style="width:949px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.23.38_PM.png"/></a></figure><figure id="e3df4c08-e3f9-4f99-9078-7016bdad7012" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.23.53_PM.png"><img style="width:942px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.23.53_PM.png"/></a></figure><figure id="37114ece-1ac9-423b-a6ee-9867050d6989" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.24.29_PM.png"><img style="width:947px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.24.29_PM.png"/></a></figure><h3 id="00974d66-83c7-47a7-9d96-e03bc604e04a" class="">Developing UI</h3><figure id="0d34062a-676b-42a2-bc9c-db67fcb3f268" class="image"><a href="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.30.43_PM.png"><img style="width:952px" src="Week%203%20Wireframes%20and%20Interfaces%20006d46652a4b4bac824cff7211164d7b/Screen_Shot_2021-12-26_at_7.30.43_PM.png"/></a></figure><p id="e4341e00-0032-4d10-9c12-d57501fb2f4a" class="">As you&#x27;re building these screens and applying your design to them, try different things out. They might not always work, but it&#x27;s important to test out all of your options.</p><p id="85241d17-b179-4d0d-8b44-dd73de46ad0a" class="">But design does much more than just act as a skin or a surface. It can really change and alter the function and the structure of your app.</p><h3 id="d311cfaa-79e3-4ab1-b594-e285da57cbe7" class="">Refining UI</h3><p id="c4b2b189-61dc-46b2-8d86-e5ec82862d56" class="">Our goal here is to make a series of refined and fully resolved screens that we can use in our digital prototype.</p><p id="3cbce778-f92e-4e4e-91bb-fcb8baadf915" class="">This stage of the process feels a little bit like completing a paint by numbers picture. You&#x27;re going from a framework that&#x27;s black and white and quite generic, to something that is much more colorful and visually compelling. If you have the time, you can make a finished design screen for every screen in your wireframe and this would men that when you came to make your digital prototype, it&#x27;s really going to feel just like your finished app.</p><p id="eeb78b56-b15b-456c-93db-c5cfd5f69e77" class="">
+</p><p id="35f304c7-d3f2-4cf9-83bc-8bfc2d5bb37d" class="">
+</p><p id="1232d484-2f9f-4106-8f55-1a6c3e7f17b0" class="">
+</p><p id="f4eacf62-d605-442f-8928-b757dba5f9ad" class="">
+</p></div></article></body></html>

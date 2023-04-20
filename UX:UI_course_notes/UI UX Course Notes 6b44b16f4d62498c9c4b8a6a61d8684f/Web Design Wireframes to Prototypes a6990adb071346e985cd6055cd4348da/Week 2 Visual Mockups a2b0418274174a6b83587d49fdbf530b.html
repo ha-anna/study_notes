@@ -1,0 +1,705 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Week 2: Visual Mockups</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a2b04182-7417-4a6b-8358-7d49fdbf530b" class="page sans"><header><h1 class="page-title">Week 2: Visual Mockups</h1><table class="properties"><tbody><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created By</th><td><span class="user"><img src="../UX%20Design%20Fundamentals%20cc18e86341c441f8af7aff6e3aafe69f/Week%204%20Interactive%20Prototype%207fd2a0e0dde742ff9d3e7a7eaa1e7e7b/485611_INoljAhL.png" class="icon user-icon"/>Anna Ha</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Created</th><td><time>@February 13, 2022 10:34 AM</time></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Last Edited Time</th><td><time>@February 22, 2022 1:18 PM</time></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last Edited By</th><td><span class="user"><img src="../UX%20Design%20Fundamentals%20cc18e86341c441f8af7aff6e3aafe69f/Week%204%20Interactive%20Prototype%207fd2a0e0dde742ff9d3e7a7eaa1e7e7b/485611_INoljAhL.png" class="icon user-icon"/>Anna Ha</span></td></tr></tbody></table></header><div class="page-body"><figure id="525efcb7-1396-4202-835c-c0171f11d20d" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-13_at_10.34.51_AM.png"><img style="width:781px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-13_at_10.34.51_AM.png"/></a></figure><p id="2efe8823-48ab-4015-84ad-e3360b0bb695" class="">While the visual mockup phase is the last phase of the UX process, users will form their first impression from the decisions made in this phase.</p><h2 id="9953e210-a21e-49ba-9b22-f36affb43fcc" class="">Design Principles and Whitespace</h2><figure id="150dd073-9d55-405c-a807-2744b289e972" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.39.46_PM.png"><img style="width:760px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.39.46_PM.png"/></a></figure><div id="83d1fd0b-f954-4311-b001-ecead380c536" class="column-list"><div id="497edf72-2ed3-4581-9474-316419f28a6f" style="width:50%" class="column"><figure id="f4a74149-7ecd-4c7a-9064-409cb9cd62c8" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.40.17_PM.png"><img style="width:558px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.40.17_PM.png"/></a></figure><figure id="9fe30ef4-b527-4a68-a974-727c41227d75" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.40.41_PM.png"><img style="width:576px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.40.41_PM.png"/></a></figure><figure id="c115780e-0f77-4a04-a84e-d52f1bdb48b2" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.41.08_PM.png"><img style="width:711px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.41.08_PM.png"/></a></figure><figure id="7b73f468-ab95-415c-b1e2-b7cd2150d60e" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.41.32_PM.png"><img style="width:473px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.41.32_PM.png"/></a></figure><figure id="ebdd3847-1b52-4feb-b812-67c942b331d7" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.41.54_PM.png"><img style="width:676px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.41.54_PM.png"/></a></figure><figure id="6081cbb2-32a2-4068-843e-6194af770e67" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.42.19_PM.png"><img style="width:683px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.42.19_PM.png"/></a></figure><figure id="35dcb112-af9b-4ab2-b582-0f6e43416b86" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.42.35_PM.png"><img style="width:431px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.42.35_PM.png"/></a></figure><figure id="1c10b924-9195-4315-b54b-670230a0fe56" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.43.15_PM.png"><img style="width:522px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-21_at_6.43.15_PM.png"/></a></figure></div><div id="78aed790-a60a-4ba8-b59f-8d9775775554" style="width:50%" class="column"><p id="7313da4d-d264-43c6-988b-0cf8baebea6d" class="">the contrast of scale is simply a difference between sizes. If you have a bunch of small elements and one big element, the bigger element will stand out.</p><p id="ec7cb315-b244-444a-b6ab-18dd78a29cff" class="">
+</p><p id="80321ecd-c68e-4771-b307-7d093adc9a52" class="">
+</p><p id="82d4c0be-6ff1-4cb6-b83b-0d732803029b" class="">
+</p><p id="cee96209-47ae-46f6-9f8b-6e2404b0db2b" class="">
+</p><p id="1caeff2d-d34a-42fe-b7f0-8871ba416c8d" class="">
+</p><p id="008fe348-aa41-45df-a583-d44b7d0a0127" class="">
+</p><p id="d25ecfc6-a390-4873-8372-31d13ba7378f" class="">Weight is a bit similar to scale, but instead of changing an element size, the visual weights, how heavy it appears, changes. Think about bolding one word in a sentence, that word will practically jump off the page and draw our attention</p><p id="6164f863-3df5-45a3-8263-f675cf790248" class="">
+</p><p id="3c1e2997-51db-4eab-b2b7-e0b49ae86622" class="">
+</p><p id="72360f0c-1afe-46ec-89a7-69cf15f1fd46" class="">
+</p><p id="35d0e6e9-d356-4bcc-a01e-f64b6a37cad4" class="">Then, we have the contrast of direction. In this example, you see one line perpendicular to the others, our eye is almost unwillingly drawn to the imaginary area where lines would intersect.</p><p id="bcb92ba4-7d13-4fac-bfa2-b47a8390fc53" class="">
+</p><p id="7c06d83b-ced2-4823-a5e3-dbf7dbb29fcb" class="">
+</p><p id="02b573b9-4966-42f1-b738-a287624b6f9d" class="">
+</p><p id="4370aad5-eb0e-4f33-8e97-5d6c2ff8fa26" class="">The contrast of form describes differences of Angular and round shapes. Quite strikingly in this example, we notice the single circle right away because it&#x27;s different from the angular shapes.</p><p id="fefa369c-4e8d-44d6-b6a2-a5c7dcf61800" class="">
+</p><p id="7890d851-e84d-4b4b-9f5a-e615a3c53b52" class="">
+</p><p id="efbfb407-11a7-4a70-b685-14438fcea3cd" class="">
+</p><p id="7558ae24-af1a-407d-82ae-3c80b55a2682" class="">
+</p><p id="37f80310-730f-4d7b-b410-0017461be1e4" class="">
+</p><p id="9c35a0bd-980e-4e4a-927c-9f5b90cf30dc" class="">Differences in texture also create contrasts. Think about texture in this way, if you could touch it, what would it feel like? Would it be smooth like the black field on the right? Or would it be rough like the pattern on the left?</p><p id="2a25c006-8eb5-44a2-a8fc-a46689331d90" class="">
+</p><p id="cdfffd34-f49c-4a67-b1bc-5739789d3693" class="">
+</p><p id="8cde30f3-5ebd-4b24-92e7-1c9eea389619" class="">
+</p><p id="c6b40573-fdca-44bf-8dca-28e031b5d8f2" class="">Contrast of space describes the illusion of some objects to appear closer to us than others.</p><p id="4a32a74b-079e-427c-be22-9726b5ebb10f" class="">
+</p><p id="8bf05c07-2cd7-4bf9-a673-eaaee8b22980" class="">
+</p><p id="95d2ca2c-7fb3-4387-9474-b7a4f733a44d" class="">
+</p><p id="08dd463d-6061-41bb-8a9b-9cf0e0a156f4" class="">
+</p><p id="0297d36a-079a-4af6-a643-403894cb25d2" class="">
+</p><p id="4f0bc85c-fd30-459a-9f3e-e491fdbbbab8" class="">Contrast of value is all about lightness or darkness of the color tone, the lighter square here stands out to us.</p><p id="d1e0c220-7b6d-4de5-8f45-b110f0358c57" class="">
+</p><p id="fe8997a8-6343-4dcf-abd7-84cbe9d3e6e0" class="">
+</p><p id="d2c0d2d2-caf1-4c4b-adbb-97b03694807a" class="">
+</p><p id="c0b91c51-fe8c-45d6-bbe2-2efaf23ff914" class="">
+</p><p id="914aceb1-b115-4e21-a35e-94c59dcbb3fa" class="">
+</p><p id="005e850b-956d-4038-9b23-d95673543990" class="">
+</p><p id="52a157da-6f52-48bf-950f-9fc51dc2083b" class="">
+</p><p id="9ccd2b1d-91e3-4d68-beab-75e8ec979ad6" class="">Lastly, color contrast is created via changes in hue or saturation. Here clearly, the red square has our attention since it&#x27;s the one element that is different.</p></div></div><h3 id="48d28355-59bf-4067-93b6-83b889a21a21" class="">Whitespace</h3><p id="4b2ce2bb-8032-475c-a451-c5416aaadfac" class="">Whitespace doesn&#x27;t have to actually be white. It could be of any color of course, but it is space that is not used for an image or text or any other design elements. It&#x27;s space that lets your design breathe.</p><figure id="ccf31e79-308e-4d1b-a06b-dd9d95d547c4" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.12.59_AM.png"><img style="width:885px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.12.59_AM.png"/></a></figure><div id="93544f82-28a3-4729-98c8-b8f82c863cf6" class="column-list"><div id="c1e8ecfc-22bd-435e-80cd-b7ce8105f005" style="width:50%" class="column"><figure id="14ad0bf2-990f-4f8e-8e93-39e6ee09c3b9" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.14.12_AM.png"><img style="width:570px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.14.12_AM.png"/></a></figure></div><div id="c81bbe1c-9636-4159-bed8-55a4236cdb5b" style="width:50%" class="column"><figure id="f22a2277-0edc-4d3b-b5c0-d48162ba7e82" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.14.25_AM.png"><img style="width:702px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.14.25_AM.png"/></a></figure></div></div><div id="6f017328-5117-4523-9725-e0a59bb3b8a6" class="column-list"><div id="a491fae9-c8d9-4600-8f38-1748334abce2" style="width:50%" class="column"><figure id="92edffa5-50b4-418a-9042-39e3afe7da79" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.14.40_AM.png"><img style="width:801px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.14.40_AM.png"/></a></figure><figure id="9a097492-3946-41a8-9ff5-7d4c9b66d3be" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.15.10_AM.png"><img style="width:858px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.15.10_AM.png"/></a></figure><figure id="a75b8992-2452-46f4-b2a8-ca9243be9887" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.15.58_AM.png"><img style="width:805px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.15.58_AM.png"/></a></figure><figure id="58b4b398-98d7-4515-9186-10b665c59bf7" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.16.27_AM.png"><img style="width:827px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.16.27_AM.png"/></a></figure></div><div id="73ce4221-508f-483b-95c5-6adf99578a7c" style="width:50%" class="column"><figure id="0d04a6c9-0dbf-4b97-ade3-ffe2f24332b5" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.15.00_AM.png"><img style="width:825px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.15.00_AM.png"/></a></figure><figure id="8da12092-b256-4526-a41c-898377d80a7e" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.15.26_AM.png"><img style="width:839px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.15.26_AM.png"/></a></figure><figure id="d86291bf-3bda-4757-b72d-385c654ebfe5" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.16.10_AM.png"><img style="width:814px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.16.10_AM.png"/></a></figure><figure id="4e3718bd-2e99-431a-98b0-fd5bf542785e" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.16.42_AM.png"><img style="width:916px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.16.42_AM.png"/></a></figure></div></div><figure id="508a034e-d730-4a50-b70e-acf7c2fecffc" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.17.22_AM.png"><img style="width:934px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.17.22_AM.png"/></a></figure><h2 id="8dadcc9e-22ff-4b2f-8e36-02e54b493896" class="">The Grid</h2><p id="2fd1bf63-f64d-4524-b2e0-adf433911312" class="">
+</p><p id="4c00418b-981b-4467-9e01-31d870fdf520" class="">Dividing up the page into incremental units can make layout more consistent and rational. This article talks about grid system and how they benefit web designers.</p><p id="ec9fe05f-7d9f-4225-8fc0-b04ba8608577" class=""><a href="https://www.smashingmagazine.com/2017/12/building-better-ui-designs-layout-grids/">Building Better UI Designs With Layout Grids</a>, by Nick Babich, Smashing Magazine, December 20 2017.</p><h2 id="01a8d633-2e94-4b45-a6f7-82eabe3ef31b" class="">Web Typography</h2><figure id="bace3fc0-47d8-4674-a31d-1e87b9aebaae" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.24.51_AM.png"><img style="width:871px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.24.51_AM.png"/></a></figure><p id="d281c4cf-0d31-4b93-841f-b69e59d7bada" class="">Things changed around the year 2010 when the technology of Web fonts was added to browsers, which allowed for the use of custom typefaces. The CSS property @font-face was now widely supported and designers are ready to exploit new possibilities.</p><figure id="39f3adc4-2cd0-4875-8781-f3776d013bc2" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.27.13_AM.png"><img style="width:834px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.27.13_AM.png"/></a></figure><figure id="a7e939be-dce6-436a-8a8e-627f7688f46c" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.29.01_AM.png"><img style="width:930px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.29.01_AM.png"/></a></figure><figure id="52992874-d4d3-44d4-bfec-05a512c17517" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.31.09_AM.png"><img style="width:943px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.31.09_AM.png"/></a></figure><figure id="4aeb3a86-5ba4-48b6-b154-e1616ba95b39" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.32.47_AM.png"><img style="width:788px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.32.47_AM.png"/></a></figure><figure id="681ef219-fefa-4353-8b06-fb3750d31a14" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.34.13_AM.png"><img style="width:852px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.34.13_AM.png"/></a></figure><figure id="c35c77ab-6f4d-4891-90c6-8eaa8f8e9b34" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.34.28_AM.png"><img style="width:828px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.34.28_AM.png"/></a></figure><p id="10596b46-9ef8-4298-b0cc-29daa4a4c014" class="">Here at 15 characters per line, you can&#x27;t even get a complete thoughts per line. So, it gets really cumbersome to read that for longer texts. Then the opposite extreme, 120 characters per line on the bottom, here you have a really hard time and you get to the end of the line to find the next line on the left. So, in a way, you have to almost move your entire head to be able to read this text and it gets really cumbersome.</p><figure id="1f5cfa05-5501-4931-8509-70ffde2c5c32" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.35.13_AM.png"><img style="width:937px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.35.13_AM.png"/></a></figure><p id="c3a22d77-1c19-4e71-84a1-a09833c26ec3" class="">On the left is something that you might set in a novel, on a magazine, or in a book. The general rule is about 120 percent of line spacing and on the right is 150 percent. So, it&#x27;s a lot more open and it&#x27;s actually a little easier to read if you look at it. Its area, it’s more inviting and part of it might also be again that space. I&#x27;ve set this in a previous video, space on the web is not expensive.</p><figure id="d80f01cc-1f04-4341-b974-145d02f61012" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.36.53_AM.png"><img style="width:719px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.36.53_AM.png"/></a></figure><figure id="de6999b8-7ff6-4bad-84c8-3457bca8b14a" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.37.27_AM.png"><img style="width:803px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.37.27_AM.png"/></a></figure><figure id="5160c5e4-3061-4974-93d9-81072bf6bb51" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.38.02_AM.png"><img style="width:840px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.38.02_AM.png"/></a></figure><figure id="de641ed5-4477-40c5-9865-8fd7a4f99985" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.38.43_AM.png"><img style="width:839px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_11.38.43_AM.png"/></a></figure><p id="1977cc39-67d9-477c-8082-67be25c498a1" class="">If you look closely, the values that are used are a little bit towards the blue spectrum. That&#x27;s another trick, I think. Instead of using a dark gray that is completely neutral, push it over to one color towards blue or purple and it just makes the color more alive. It just sparkles a little bit and you can see this I think suddenly here in the comparison, the neutral graze almost look a little bit dead or dull.</p><p id="3f4d1a48-9c26-42be-9fb8-323362c1e1c8" class="">
+</p><p id="7ea77dbe-8a95-46ae-a30e-d0f4c4f44756" class="">If you want to go further, this article makes a solid case for why using larger type for body text makes a better experience for your user.</p><p id="95ba3b69-8771-4541-988d-a0bf1caeeb49" class=""><a href="https://blog.usejournal.com/your-body-text-is-too-small-5e02d36dc902">Your Body Text is Too Small</a>, by Christian Miller, Noteworthy - The Journal Blog, September 29 2016.</p><h2 id="437fb6e3-2b33-4cc0-8c83-965981f88994" class="">Web History, Skeuomorphs &amp; Flat Design</h2><p id="5dc820ba-a0b4-493b-b915-ad6b8cba60d9" class="">For a trip into the past, check out the <a href="https://www.webdesignmuseum.org/">Web Design Museum</a>, which aims to uncover web design trends and how they’ve emerged and changed over time.</p><p id="0fc6fcb0-d2ab-4b3f-a54f-8e87858aefb8" class="">This article gives some background on the project.</p><p id="f8c49f06-de2e-4818-b4e0-598df961e474" class=""><a href="https://eyeondesign.aiga.org/remember-the-space-jam-site-a-trip-through-online-past-with-the-web-design-museum/">Remember the Space Jam site? A Trip Through Online Past with the Web Design Museum</a>, by Madeleine Morley, AIGA Eye on Design Blog, March 12 2018.</p><p id="651576f8-d941-44bb-9be9-d3baed1f445d" class=""><em>Skeuomorph</em> is a fun word to say and you can impress your friends with it. Find out what a means and how it was challenged by flat and material design.</p><p id="6d583c0a-2562-4f9b-a93a-7aa06c92516e" class=""><a href="https://en.99designs.de/blog/trends/skeuomorphism-flat-design-material-design/">Skeuomorphism vs. flat design vs material design</a>, by workerbee, 99 Designs, no date.</p><h2 id="1c7e7bd9-6a06-442d-a2ff-22fb5b96bc8d" class="">Moodboards</h2><p id="5a2990f4-c713-4cea-9488-5214a4912881" class="">A moodboard is an integral step of any design project, and there are plenty of approaches for making one. <strong>You will be asked to create a moodboard as part of your assignment this week.</strong> I’m not going to tell you how to put one together, but this article should provoke some inspiration.</p><p id="4e73a98f-7ea7-48a8-8e06-a66f5c82cd85" class=""><a href="https://uxplanet.org/design-mood-7-motives-to-create-mood-boards-b81ae36e399f">7 Motives to Create Mood Boards</a>, by Tubik Studio, Medium, October 13 2017.</p><p id="1ba7a96f-ca93-470c-99f7-22f26b5f6973" class="">
+</p><p id="e4753da5-ede2-4c7d-a3ee-3fb473517b75" class="">
+</p><h2 id="b29d4234-aee2-4cde-9674-3ad53b48113b" class="">Mockups</h2><figure id="9146294d-846b-4904-b8d0-fcef30cae395" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_1.16.50_PM.png"><img style="width:751px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_1.16.50_PM.png"/></a></figure><figure id="0a51f0ab-96a1-484a-8b37-fe2a7d31b82b" class="image"><a href="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_1.17.59_PM.png"><img style="width:787px" src="Week%202%20Visual%20Mockups%20a2b0418274174a6b83587d49fdbf530b/Screen_Shot_2022-02-22_at_1.17.59_PM.png"/></a></figure></div></article></body></html>
