@@ -702,7 +702,10 @@ temperature.degrees &gt; 70 ? { ...temperature, isHigh: true } : temperature
 );
 console.log(newTemps);
 
-// logs out [{degrees: 69, isRecordTemp: false}, {degrees: 82, isRecordTemp: true, isHigh: true}, {degrees: 73, isRecordTemp: false, isHigh: true}, {degrees: 64, isRecordTemp: false}]</code></pre><p id="25f89f38-0063-499c-9329-6b1ae258c2e3" class="">
+// logs out [{degrees: 69, isRecordTemp: false}, 
+// {degrees: 82, isRecordTemp: true, isHigh: true}, 
+// {degrees: 73, isRecordTemp: false, isHigh: true}, 
+// {degrees: 64, isRecordTemp: false}]</code></pre><p id="25f89f38-0063-499c-9329-6b1ae258c2e3" class="">
 </p><p id="ce168576-97a8-40f9-895e-087737478974" class=""><code>.forEach()</code> method executes a provided function once for each array element. It iterates through array but does not create a new one like <code>.map()</code>.</p><pre id="1359a9eb-08cf-4d49-b41e-4e03023d9afb" class="code"><code>const temperatures = [
   { degrees: 69, isRecordTemp: false },
   { degrees: 82, isRecordTemp: true },

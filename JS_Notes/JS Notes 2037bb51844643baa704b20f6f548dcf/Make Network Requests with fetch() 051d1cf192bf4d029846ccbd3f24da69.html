@@ -671,7 +671,11 @@ blockquote {
   .then(response =&gt; response.json())</code></pre><pre id="f224c125-e869-4945-9f78-91b380e8421e" class="code"><code>fetch(&#x27;https://jsonplaceholder.typicode.com/posts/1&#x27;)
   .then(response =&gt; response.json())
   .then(data =&gt; console.log(data))
-//logs out {userId: 1, id: 1, title: &quot;sunt aut facere repellat provident occaecati excepturi optio reprehenderit&quot;, body: &quot;quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto&quot;}</code></pre><p id="1395be3b-6ad5-4ee7-a8c4-c719c71d347f" class="">And now we can interact with this data like a normal JS object.</p><p id="a2913b18-5cb3-451a-b098-6880e57c6b1c" class="">
+//logs out {userId: 1, id: 1, title: 
+// &quot;sunt aut facere repellat provident occaecati excepturi optio reprehenderit&quot;, 
+// body: &quot;quia et suscipit suscipit recusandae consequuntur expedita et cum 
+// reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem 
+// eveniet architecto&quot;}</code></pre><p id="1395be3b-6ad5-4ee7-a8c4-c719c71d347f" class="">And now we can interact with this data like a normal JS object.</p><p id="a2913b18-5cb3-451a-b098-6880e57c6b1c" class="">
 </p><h3 id="d6216c06-a208-4423-9173-1a434500fa77" class="">More complex requests:</h3><p id="176cf657-3cd8-4662-886a-0fa10133d57b" class="">POST request</p><pre id="ac465689-80a5-4882-a87b-a4ed93062d21" class="code"><code>const blogPost = {
   title: &quot;Cool post&quot;,
   body: &quot;lkajsdflkjasjlfda&quot;,
